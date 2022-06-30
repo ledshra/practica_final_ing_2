@@ -16,8 +16,7 @@
                     <input class="r" type="submit" name="Submit" value="Agregar">
         </form>
         <form>
-            <label
-              >Ingrese la fecha en la que realizara la Tarea:
+            <label><h1>Ingrese la fecha en la que realizara la Tarea:</h1>
               <input type="date" name="bday" required pattern="\d{4}-\d{2}-\d{2}" />
               <span class="validity"></span>
             </label>
@@ -25,6 +24,14 @@
               <button>Submit</button>
             </p>
           </form>
-    </fieldset>
+    </fieldset> 
+    <form>
+    <div class="container-clock">
+      <h1 id="time">00:00:00</h1>
+      <h1><p id="date">date</p></h1>
+  </div>
+
+  <script src="clock.js"></script>
+</form>
 </body>
 </html>
