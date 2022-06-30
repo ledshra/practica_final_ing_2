@@ -14,6 +14,10 @@ body {
 h1{
     color: white
 }
+h2{
+    color: white;
+    text-align: center;
+}
 
 .w{
     width: 60%;
@@ -29,6 +33,7 @@ h1{
     border-color: red;
     background-color:black;
     color: aliceblue;
+    margin-left: 150px;
 }
 
 button{
