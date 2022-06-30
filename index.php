@@ -41,6 +41,13 @@ $result = mysqli_query($mysqli, "SELECT * FROM tareas WHERE login_id=".$_SESSION
         </table>
         
 </div>
+<form>
+    <div class="container-clock">
+    <center><h2 style="color:#FF0000" id="time">00:00:00</h2></center>
+    <center><h2 style="color:#FF0000"><p id="date">date</p></h2></center>
+  </div>
+  <script src="clock.js"></script>
+</form>
     <a href="agregar.html">
         <button class="r">Nueva Tarea</button>
     </a>
