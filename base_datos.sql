@@ -15,6 +15,7 @@ CREATE TABLE `tareas` (
     `id` int(11) NOT NULL auto_increment,
     `name` varchar(100) NOT NULL,
     `clasi` varchar(100) NOT NULL,
+    `status` varchar(15) NOT NULL DEFAULT 'sin terminar',
     `login_id` int(11) NOT NULL,
     PRIMARY KEY  (`id`),
     CONSTRAINT FK_products_1

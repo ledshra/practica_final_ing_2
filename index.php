@@ -21,10 +21,9 @@ $datos = mysqli_query($mysqli, "SELECT * FROM login WHERE id=".$_SESSION['id']."
     <title>Todo List</title>
     <link rel="stylesheet" type="text/css" href="styleindex.css">
 </head>
-
 <h1 class="titulo">Todo List</h1>
-
-<sidebar>
+<body>
+    <sidebar>
     <fieldset>
         <div>
             <center>
@@ -39,53 +38,45 @@ $datos = mysqli_query($mysqli, "SELECT * FROM login WHERE id=".$_SESSION['id']."
                 echo "</tr>";
             }
             ?>
+            <a href="agregar.html">
+                <button>Nueva Tarea</button>
+            </a>
 
             <br>
             <br>
-            <a href="logout.php"><button class="t">Cerrar Sesion</button></a>
+            <a href="logout.php"><button>Cerrar Sesion</button></a>
             <br>
             <br>
-            <?php
-            echo "<h2>";
-                date_default_timezone_set('America/Lima');    
-                $Time = date('h a', time());  
-                echo "Son: $Time.";
-                echo "<br>";
-                date_default_timezone_set('America/Lima');    
-                $Date = date('m-d-Y', time());  
-                echo "De $Date.";
-            echo "</h2>";
-            ?>
             </center>
         </div>
     </fieldset>
 </sidebar>
-
-<body>
-<br/><br/>
+<br><br>
 <div class="container">
-        <table width='90%' border=0>
+        <table width='99%' border=0 >
             <tr>
-                <td><h1>Tarea</h1></td>
-                <td><h1>Clasificación</h1></td>
-                <td width="30%"><h1>Acción</h1></td>
+                <td width="20%"><h1>Tarea</h1></td>
+                <td><h1>clasi</h1></td>
+                <td><h1>Status</h1></td>
+                <td><h1>Acción</h1></td>
             </tr>
             <?php
-            while($res = mysqli_fetch_array($result)) {		
+            while($res = mysqli_fetch_array($result)) {     
                 echo "<tr>";
                 echo "<td>".$res['name']."</td>";
                 echo "<td>".$res['clasi']."</td>";
+                echo "<td><a href=\"status.php?id=$res[id]\">
+                <button class=\"ter\"><h2>".$res['status']."</h2></button></a></td>";
+
                 echo "<td><a href=\"edit.php?id=$res[id]\">
-                <button>Editar</button></a>
+                <button class=\"edi\">Editar</button></a>
+
                 <a href=\"delete.php?id=$res[id]\" onClick=\"return confirm('Deseas eliminar la tarea?')\">
-                <button>Eliminar</button></a></td>";		
+                <button class=\"eli\">Eliminar</button></a></td>";
             }
             ?>
         </table>
         
 </div>
-    <a href="agregar.html">
-        <button class="r">Nueva Tarea</button>
-    </a>
 </body>
 </html>

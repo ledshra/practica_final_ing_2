@@ -18,12 +18,13 @@ if(isset($_POST['Submit'])) {
         if(empty($name)) {
             echo "<font color='red'>ERROR.</font><br/>";
         }
+     if(empty($clasi)) {
+            echo "<font color='red'>Quantity field is empty.</font><br/>";
+        }
         echo "<br/><a href='javascript:self.history.back();'>Volver</a>";
     } else {
         $result = mysqli_query($mysqli, "INSERT INTO tareas(name, clasi, login_id) VALUES('$name', '$clasi', '$loginId')");
-		
-        echo "<font color='green'>Tarea agregada correctamente.";
-        echo "<br/><a href='index.php'>Home</a>";
+	header("Location:index.php");
 
     }
 }
