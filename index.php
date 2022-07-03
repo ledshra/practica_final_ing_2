@@ -17,53 +17,60 @@ $datos = mysqli_query($mysqli, "SELECT * FROM login WHERE id=".$_SESSION['id']."
 
 <html>
 <head>
-    <html lang="es">
     <title>Todo List</title>
     <link rel="stylesheet" type="text/css" href="styleindex.css">
 </head>
-<h1 class="titulo">Todo List</h1>
 <body>
-    <sidebar>
-    <fieldset>
-        <div>
-            <center>
-            <br>
-            <h1>Lista de tareas de:</h1>
-            <br>
-            <?php
-            while($dat = mysqli_fetch_array($datos)) {     
-                echo "<tr>";
-                echo "<td><h1>".$dat['name']."</h1></td>";   
-                echo "<td><h2>".$dat['email']."</h2></td>";
-                echo "</tr>";
-            }
-            ?>
-            <a href="agregar.html">
-                <button>Nueva Tarea</button>
-            </a>
-
-            <br>
-            <br>
-            <a href="logout.php"><button>Cerrar Sesion</button></a>
-            <br>
-            <br>
-            </center>
+    <div class="tit">
+        <h1 class="titulo">Todo Listttd</h1>
+        <div class="l">
+            <p style="color:#FF0000" id="time">00:00:00</p>
+            <p style="color:#FF0000" id="date">date</p>
         </div>
-    </fieldset>
-</sidebar>
+    </div>
+
+    <sidebar>
+        <fieldset>
+            <div>
+                <center>
+                <h1>Lista de tareas de:</h1>
+                <?php
+                while($dat = mysqli_fetch_array($datos)) {     
+                    echo "<tr>";
+                    echo "<td><h2>".$dat['name']."</h2></td>";   
+                    echo "<td><h2>".$dat['email']."</h2></td>";
+                    echo "</tr>";
+                }
+                ?>
+                <a href="agregar.html">
+                    <button>Nueva Tarea</button>
+                </a>
+                <br>
+                <br>
+                <a href="logout.php"><button>Cerrar Sesion</button></a>
+                </center>
+            </div>
+        </fieldset>
+    </sidebar>
 <br><br>
 <div class="container">
-        <table width='99%' border=0 >
+        <table width='99%' border=0>
             <tr>
                 <td width="20%"><h1>Tarea</h1></td>
-                <td><h1>clasi</h1></td>
+                <td><h1>Creado</h1></td>
+                <td><h1>Vence</h1></td>
+                <td><h1>clase</h1></td>
                 <td><h1>Status</h1></td>
                 <td><h1>Acción</h1></td>
             </tr>
             <?php
-            while($res = mysqli_fetch_array($result)) {     
+            date_default_timezone_set("America/Lima");
+            $fechaActual = date('d-m-Y H:i:s');
+            while($res = mysqli_fetch_array($result)) {		
                 echo "<tr>";
                 echo "<td>".$res['name']."</td>";
+                echo "<td>".$res['fecha_date']."</td>";
+                echo "<td>".$res['fecha']."</td>";	
                 echo "<td>".$res['clasi']."</td>";
                 echo "<td><a href=\"status.php?id=$res[id]\">
                 <button class=\"ter\"><h2>".$res['status']."</h2></button></a></td>";
@@ -76,7 +83,9 @@ $datos = mysqli_query($mysqli, "SELECT * FROM login WHERE id=".$_SESSION['id']."
             }
             ?>
         </table>
-        
 </div>
+<form>
+  <script src="clock.js"></script>
+</form>
 </body>
 </html>

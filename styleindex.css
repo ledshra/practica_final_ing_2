@@ -28,28 +28,23 @@ button {
   color: aliceblue;
 }
 
-.edi {
-  width: 100px;
-  height: 40px;
-  border-color: blue;
-  color: aliceblue;
-}
-
-.eli {
-  width: 100px;
-  height: 40px;
-  border-color: red;
-  color: aliceblue;
-}
-
-.titulo {
+.tit {
   background-color: rgba(0, 0, 0, 0.5);
   padding: 10px;
   width: 100%;
+}
+
+.titulo {
   font-weight: 30sp;
   font-size: 50px;
   color: #fff;
   text-align: center;
+}
+
+.l {
+  margin-top: -35px;
+  float: right;
+  margin-right: 40px;
 }
 
 
@@ -69,6 +64,20 @@ sidebar {
   box-sizing: border-box;
   text-decoration: none;
   list-style-type: none;
+}
+
+.edi {
+  width: 100px;
+  height: 40px;
+  border-color: blue;
+  color: aliceblue;
+}
+
+.eli {
+  width: 100px;
+  height: 40px;
+  border-color: red;
+  color: aliceblue;
 }
 
 .ter {
