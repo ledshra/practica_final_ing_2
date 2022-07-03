@@ -10,14 +10,21 @@
     <br/><br/>
     <fieldset>
         <legend><h1>Agregar Tarea</h1></legend>
-        <form action="agregar.php" method="post" accept-charset="utf-8" name="form1"> 
-                    <h1>Nueva Tarea</h1>
-                    <input class="w" type="text" name="name" placeholder="Nueva Tarea" class="i">
-        <label><h1>Ingrese la fecha en la que realizara la Tarea:</h1>
-                      <input type="datetime" name="fecha" value="2022-06-30 04:35:40">
-                      <input class="r" type="submit" name="Submit" value="Agregar">
-                      <span class="validity"></span>
-                    </label>
+        <form action="agregar.php" method="post" name="form1">
+            <table width="100%" border=0>
+                    <tr>
+                        <td><h1>Nueva Tarea</h1></td>
+                        <td><h1>Clasificacion</h1></td>
+                        <td><h1>Vence</h1></td>
+                        <td><h1>Accion</h1></td>
+                    </tr>
+                    <tr>
+                        <td><input class="w" type="text" name="name" placeholder="Nueva Tarea" required></td>
+                        <td><input class="w" type="text" name="clasi" placeholder="Clasificacion" required></td>
+                        <td><input class="d" type="date" name="fecha" required></td>
+                        <td><input class="r" type="submit" name="Submit" value="Agregar"></td>
+                    </tr>
+            </table>
         </form>
     </fieldset> 
     <form>

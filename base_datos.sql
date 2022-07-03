@@ -1,5 +1,4 @@
-drop database todo;
-create database `todo`;
+CREATE DATABASE `todo`;
 use `todo`;
 
 CREATE TABLE `login` (
@@ -15,7 +14,10 @@ CREATE TABLE `tareas` (
     `id` int(11) NOT NULL auto_increment,
     `name` varchar(100) NOT NULL,
     `login_id` int(11) NOT NULL,
-    `fecha_date` timestamp NOT NULL,
+    `fecha_date` date DEFAULT CURRENT_TIMESTAMP,
+    `fecha`date,
+    `clasi` varchar(100) NOT NULL,
+    `status` varchar(15) NOT NULL DEFAULT 'sin terminar',
     PRIMARY KEY  (`id`),
     CONSTRAINT FK_products_1
     FOREIGN KEY (login_id) REFERENCES login(id)

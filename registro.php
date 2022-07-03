@@ -25,10 +25,7 @@
         } else {
             mysqli_query($mysqli, "INSERT INTO login(name, email, username, password) VALUES('$name', '$email', '$user', md5('$pass'))")
             or die("<center><h1>ERROR.</h1>");
-			
-            echo "<center><h1>El registro se realiso correctamente</h1>";
-            echo "<br/>";
-            echo "<a href='login.php'><h1>Login</h1></a>";
+            header("Location:login.php");
         }
     } else {
 ?>
@@ -36,16 +33,16 @@
             <div>
             <h1 class="lab">Registro</h1>
                     <h2 class="lab">Nombre</h2>
-                    <input type="text" name="name" class="r" placeholder="Nombre">
+                    <input type="text" name="name" class="r" placeholder="Nombre" required>
                 
                     <h2 class="lab">Email</h2>
-                    <input type="text" name="email" class="r" placeholder="ejemplo@gmail.com">
+                    <input type="text" name="email" class="r" placeholder="ejemplo@gmail.com" required>
                  
                     <h2 class="lab">Usuario</h2>
-                    <input type="text" name="username" class="r" placeholder="Usuario">
+                    <input type="text" name="username" class="r" placeholder="Usuario" required>
                  
                     <h2 class="lab">Contraseña</h2>
-                    <input type="password" name="password" class="r" placeholder="Contraseña">
+                    <input type="password" name="password" class="r" placeholder="Contraseña" required>
                 <div>
                     <input class="in" type="submit" name="submit" value="Registrar">
                     <a href="index.php">Login</a>

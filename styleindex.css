@@ -1,64 +1,89 @@
 body {
-    background-image:url("https://fondosmil.com/fondo/6625.jpg");
+  background-image: url("https://fondosmil.com/fondo/6625.jpg");
 }
 
-fieldset{
-    height: 100%;
+fieldset {
+  height: 100%;
 }
 
-.container{
-    height:auto;
-    width:79.9%;
-    margin-top:-34px;
-    background-color:rgba(0,0,0,0.5);
-    float: right;
+.container {
+  height: auto;
+  width: 79.9%;
+  margin-top: -34px;
+  background-color: rgba(0, 0, 0, 0.5);
+  float: right;
 }
 
-table{
-    color: white;
-    margin-left: 10px;
-    margin-right: 10px;
-}
-h2{
-    color: white;
-    text-align: center;
-}
-button{
-    width: 100px;
-    height: 40px;
-    background-color:black;
-    border-color: red;
-    color: aliceblue;
+table {
+  color: white;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
-.titulo{
-    background-color: rgba(0,0,0,0.5);
-    padding:10px;
-    width:100%;
-    font-weight:30sp;
-    font-size:50px;
-    color:#fff;
-    text-align: center;
+button {
+  width: 100px;
+  height: 40px;
+  background-color: black;
+  border-color: red;
+  color: aliceblue;
 }
 
-.r{
-    margin-left: 150px;
+.tit {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  width: 100%;
 }
 
-sidebar{
-    background-color: rgba(0,0,0,0.5);
-    float:left;
-    height:87%;
-    width:20%;
-    position:relative;
-    color: white;
-    margin-top: 2px;
+.titulo {
+  font-weight: 30sp;
+  font-size: 50px;
+  color: #fff;
+  text-align: center;
 }
 
-*{
- margin:0px;
- padding:0px;
- box-sizing:border-box;
- text-decoration:none;
- list-style-type:none;
+.l {
+  margin-top: -35px;
+  float: right;
+  margin-right: 40px;
+}
+
+
+sidebar {
+  background-color: rgba(0, 0, 0, 0.5);
+  float: left;
+  height: 87%;
+  width: 20%;
+  position: relative;
+  color: white;
+  margin-top: 2px;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+.edi {
+  width: 100px;
+  height: 40px;
+  border-color: blue;
+  color: aliceblue;
+}
+
+.eli {
+  width: 100px;
+  height: 40px;
+  border-color: red;
+  color: aliceblue;
+}
+
+.ter {
+  height: 100%;
+  background-color: gray;
+  border-color: transparent;
+  border-radius: 10px;
+  color: aliceblue;
 }
