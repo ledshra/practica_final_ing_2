@@ -15,7 +15,7 @@ $datos = mysqli_query($mysqli, "SELECT * FROM login WHERE id=".$_SESSION['id']."
 
 ?>
 <?php
-include '../connection.php';
+include 'connection.php';
 ?>
 <!doctype html>
 <html>
@@ -40,6 +40,9 @@ include '../connection.php';
             }
         }
         ?>
+
+
+
     </body>
 </html>
 

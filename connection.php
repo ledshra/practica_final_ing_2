@@ -5,7 +5,7 @@ $databaseName = 'todo';
 $databaseUsername = 'root';
 $databasePassword = '';
 
-$mysqli = mysqli_connect($databaseHost, $databaseUsername, $databasePassword, $databaseName); 
+$con = $mysqli = new mysqli($databaseHost, $databaseUsername, $databasePassword, $databaseName); 
 
 if ($con->connect_errno){
     die("ha ocurrido un error");
