@@ -15,7 +15,7 @@ $datos = mysqli_query($mysqli, "SELECT * FROM login WHERE id=".$_SESSION['id']."
 
 ?>
 <?php
-include 'connection.php';
+include '../connection.php';
 ?>
 <!doctype html>
 <html>
@@ -33,9 +33,10 @@ include 'connection.php';
         <?php
         if(isset($_GET['enviar'])){
             $busqueda =$_GET['busqueda'];
-            $consulta=$con->query("SELECT *FROM nombre WHERE id LIKE '%busqueda%' ");
+
+            $consulta = $con->query("SELECT * FROM tareas WHERE id LIKE '%$busqueda%' ");
             while ($row =$consulta->fetch_array()){
-                echo $row['porque login'].'<br>';
+                echo $row['porque'].'<br>';
             }
         }
         ?>
