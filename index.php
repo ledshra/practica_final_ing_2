@@ -17,34 +17,6 @@ $datos = mysqli_query($mysqli, "SELECT * FROM login WHERE id=".$_SESSION['id']."
 <?php
 include 'connection.php';
 ?>
-<!doctype html>
-<html>
-    <head>
-        <title></title>
-    </head>
-    <body>
-        <form action="" method="get">
-            <input type="text" name="busqueda"> <br>
-            <input type="submit" name="enviar" value="buscar">
-        </form>
-
-        <br><br><br>
-
-        <?php
-        if(isset($_GET['enviar'])){
-            $busqueda =$_GET['busqueda'];
-
-            $consulta = $con->query("SELECT * FROM tareas WHERE id LIKE '%$busqueda%' ");
-            while ($row =$consulta->fetch_array()){
-                echo $row['porque'].'<br>';
-            }
-        }
-        ?>
-
-
-
-    </body>
-</html>
 
 <html>
 <head>
@@ -118,5 +90,23 @@ include 'connection.php';
 <form>
   <script src="clock.js"></script>
 </form>
+<form action="" method="get">
+        <input type="text" name="busqueda">
+        <input type="submit" name="enviar" value="buscar">
+</form>
+<table border="1">
+    <?php
+    if(isset($_GET['enviar'])){
+        $busqueda =$_GET['busqueda'];
+
+        $consulta = $con->query("SELECT * FROM tareas WHERE name LIKE '%$busqueda%' ");
+        while ($row =$consulta->fetch_array()){
+            echo "<tr>";
+            echo "<td>".$row['name']."</td>";
+            echo "</tr>";
+        }
+    }
+    ?>
+</table>        
 </body>
 </html>

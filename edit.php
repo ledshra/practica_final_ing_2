@@ -52,8 +52,6 @@ while($res = mysqli_fetch_array($result))
                 <div>
                     <h1>Editar Tarea</h1>
                     <input type="text" name="name" value="<?php echo $name;?>"class="q">
-                    <input type="datetime" name="fecha" value="2022-06-30 06:56:28"class="q">
-                    <input type="hidden" name="id" value=<?php echo $_GET['id'];?>>
                     <input class="r" type="submit" name="update" value="Actualizar" >
                 </div>
     </form>
