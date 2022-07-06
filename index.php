@@ -99,7 +99,7 @@ include 'connection.php';
     if(isset($_GET['enviar'])){
         $busqueda =$_GET['busqueda'];
 
-        $consulta = $con->query("SELECT * FROM tareas WHERE name LIKE '%$busqueda%' ");
+        $consulta = $con->query("SELECT * FROM tareas WHERE name LIKE '%$busqueda%'=".$_SESSION['id']." ORDER BY id DESC");
         echo "<tr>";
             echo "<td><h2>Tarea<h2></td>";
             echo "<td><h2>Estado<h2></td>";
