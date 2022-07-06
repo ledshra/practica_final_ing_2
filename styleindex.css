@@ -87,3 +87,23 @@ sidebar {
   border-radius: 10px;
   color: aliceblue;
 }
+
+.bus{
+  height: auto;
+  width: 16%;
+  background-color: rgba(0, 0, 0, 0.7);
+  margin-left: 20.2%;
+  text-align: center;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-color: blue;
+  border-spacing: 7px;
+}
+
+.for{
+  height: auto;
+  width: 25%;
+  float: right;
+  margin-right: 54.9%;
+  margin-top: 5px;
+}

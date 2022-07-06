@@ -25,7 +25,7 @@ include 'connection.php';
 </head>
 <body>
     <div class="tit">
-        <h1 class="titulo">Todo Listttd</h1>
+        <h1 class="titulo">To-do List</h1>
         <div class="l">
             <p style="color:#FF0000" id="time">00:00:00</p>
             <p style="color:#FF0000" id="date">date</p>
@@ -63,7 +63,7 @@ include 'connection.php';
                 <td><h1>Creado</h1></td>
                 <td><h1>Vence</h1></td>
                 <td><h1>clase</h1></td>
-                <td><h1>Status</h1></td>
+                <td><h1>Estado</h1></td>
                 <td><h1>Acción</h1></td>
             </tr>
             <?php
@@ -90,23 +90,28 @@ include 'connection.php';
 <form>
   <script src="clock.js"></script>
 </form>
-<form action="" method="get">
+<form class="for" method="get">
         <input type="text" name="busqueda">
         <input type="submit" name="enviar" value="buscar">
 </form>
-<table border="1">
+<table class="bus" border="0">
     <?php
     if(isset($_GET['enviar'])){
         $busqueda =$_GET['busqueda'];
 
         $consulta = $con->query("SELECT * FROM tareas WHERE name LIKE '%$busqueda%' ");
+        echo "<tr>";
+            echo "<td><h2>Tarea<h2></td>";
+            echo "<td><h2>Estado<h2></td>";
+            echo "</tr>";
         while ($row =$consulta->fetch_array()){
             echo "<tr>";
             echo "<td>".$row['name']."</td>";
+            echo "<td>".$row['status']."</td>";
             echo "</tr>";
         }
     }
     ?>
-</table>        
+</table>       
 </body>
 </html>
